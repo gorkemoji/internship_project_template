@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:internship_project_template/view/screen/home/home_screen.dart';
 import 'package:internship_project_template/view/screen/onboarding/onboarding_screen.dart';
 import 'package:internship_project_template/view/screen/paywall/paywall_screen.dart';
 
@@ -22,7 +23,7 @@ class AuthWrapper extends StatelessWidget {
         }
 
         if (snapshot.hasData) {
-          return const PaywallScreen(); // HomeScreen olarak değişebilir. Şuanlık giriş yapmış kullanıcı Paywall'a yönlendirilecektir.
+          return const HomeScreen();
         } else {
           return const OnboardingScreen(); // Giriş yapmamış kullanıcı ise OnboardingScreen'a yönlendirilip uygulama tanıtımını izleyecektir.
         }

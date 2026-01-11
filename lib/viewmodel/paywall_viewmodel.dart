@@ -1,7 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:internship_project_template/view/screen/home/home_screen.dart';
 
+import '../service/database_service.dart';
+import '../view/widget/paywall/premium_success_sheet.dart';
+
 class PaywallViewModel extends ChangeNotifier {
+  final DatabaseService _databaseService = DatabaseService();
+
   int _selectedIndex = 0; // Yıllık, aylık seçimi
   bool _isLoading = false;
 
@@ -17,25 +23,33 @@ class PaywallViewModel extends ChangeNotifier {
     _isLoading = true;
     notifyListeners();
 
-    // Gerçek bir ödeme işlemi gibi 1.5 saniye bekletilecek
-    await Future.delayed(const Duration(milliseconds: 1500));
+    try {
+      // Gerçek bir ödeme işlemi gibi 2 saniye bekletilecek
+      await Future.delayed(const Duration(milliseconds: 2000));
 
-    _isLoading = false;
-    notifyListeners();
+      final user = FirebaseAuth.instance.currentUser;
 
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Hoşgeldin Premium Üye!"),
-          backgroundColor: Colors.black,
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+      if (user != null) {
+        await _databaseService.upgradeToPremium(
+          user.uid,
+          _selectedIndex == 0 ? 'yearly' : 'monthly',
+        );
+      }
 
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()), (route) => false,
-      );
+      _isLoading = false;
+      notifyListeners();
+
+      if (context.mounted) {
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          backgroundColor: Colors.transparent,
+          builder: (context) => const PremiumSuccessSheet(),
+        );
+      }
+    } catch (e) {
+      _isLoading = false;
+      notifyListeners();
     }
   }
 
