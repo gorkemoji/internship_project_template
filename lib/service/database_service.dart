@@ -10,6 +10,10 @@ class DatabaseService {
       'email': email,
       'level': 'Başlangıç',
       'points': 0,
+      'streak': 0,
+      'isPremium': false,
+      'planType': 'free',
+      'dailySecondsLeft': 120,
       'createdAt': FieldValue.serverTimestamp(),
     });
   }
@@ -37,5 +41,9 @@ class DatabaseService {
       print("Premium kontrol hatası: $e");
       return false;
     }
+  }
+
+  Stream<DocumentSnapshot> getUserStream(String uid) {
+    return _firestore.collection('users').doc(uid).snapshots();
   }
 }
