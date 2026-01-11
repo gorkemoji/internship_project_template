@@ -12,7 +12,20 @@
           "package_name": "com.gorkemoji.internship_project_template"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "973169528464-ckdbo8jf3gmla7p71m1ieav6m2ucqj4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gorkemoji.internship_project_template",
+            "certificate_hash": "df03ce955be4c256d9a440bbd3175f17d869cf79"
+          }
+        },
+        {
+          "client_id": "973169528464-h8oih60c774avl8nvvqbdah48mq89u8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBu9mrNXw17FJ-ZCXpWj2MbHjxenzoqu2c"
@@ -20,26 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:973169528464:android:27b8cbbc875724c3d65215",
-        "android_client_info": {
-          "package_name": "com.perasoft.hilingo"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBu9mrNXw17FJ-ZCXpWj2MbHjxenzoqu2c"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973169528464-h8oih60c774avl8nvvqbdah48mq89u8s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973169528464-a3u2pc0oh4lacc0vukiuulto8g9hro0k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gorkemoji.internshipProjectTemplate"
+              }
+            }
+          ]
         }
       }
     }
