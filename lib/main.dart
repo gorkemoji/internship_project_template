@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:internship_project_template/view/screen/splash_screen.dart';
 
 import 'constant/application_colors.dart';
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'hilingo',
       theme: ThemeData(
+        textTheme: GoogleFonts.urbanistTextTheme(
+          Theme.of(context).textTheme
+        ),
         colorScheme: .fromSeed(seedColor: ApplicationColors.accent),
         appBarTheme: const AppBarTheme(
           surfaceTintColor: Colors.transparent,
