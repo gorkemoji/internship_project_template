@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "973169528464",
+    "project_id": "pera-soft-internship",
+    "storage_bucket": "pera-soft-internship.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973169528464:android:f6dc6c02426bdb75d65215",
+        "android_client_info": {
+          "package_name": "com.gorkemoji.internship_project_template"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu9mrNXw17FJ-ZCXpWj2MbHjxenzoqu2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973169528464:android:27b8cbbc875724c3d65215",
+        "android_client_info": {
+          "package_name": "com.perasoft.hilingo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu9mrNXw17FJ-ZCXpWj2MbHjxenzoqu2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
