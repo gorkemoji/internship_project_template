@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internship_project_template/view/screen/progress/progress_screen.dart';
 import 'package:internship_project_template/view/screen/home/dashboard_screen.dart';
-import 'package:internship_project_template/view/screen/home/profile_screen.dart';
+import 'package:internship_project_template/view/screen/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../viewmodel/home_viewmodel.dart';
 import '../../widget/home/home_app_bar.dart';
