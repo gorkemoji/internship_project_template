@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:internship_project_template/view/screen/home/action_screen.dart';
+import 'package:internship_project_template/view/screen/progress/progress_screen.dart';
 import 'package:internship_project_template/view/screen/home/dashboard_screen.dart';
 import 'package:internship_project_template/view/screen/home/profile_screen.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 index: viewModel.currentIndex,
                 children: [
                   DashboardScreen(viewModel: viewModel),
-                  const ActionScreen(),
+                  const ProgressScreen(),
                   const ProfileScreen(),
                 ],
               ),

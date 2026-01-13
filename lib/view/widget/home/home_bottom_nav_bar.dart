@@ -48,7 +48,7 @@ class HomeBottomNavBar extends StatelessWidget {
               elevation: 0,
               items: [
                 _buildNavItem(Icons.home_rounded, Icons.home_outlined, "Anasayfa", 0),
-                _buildNavItem(Icons.insert_drive_file_rounded, Icons.insert_drive_file_outlined, "Rapor", 1),
+                _buildNavItem(Icons.autorenew_rounded, Icons.autorenew_outlined, "İlerleme", 1),
                 _buildNavItem(Icons.person_rounded, Icons.person_outline, "Profil", 2),
               ],
             ),

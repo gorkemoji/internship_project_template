@@ -8,4 +8,8 @@ class ApplicationColors {
   static const Color lightGrey = Color(0xFFF5F5F5);
   static const Color grey = Color(0xFF757575);
   static const Color darkGrey = Color(0xFF222222);
+
+  static const Color goldRank = Color(0xFFFFD700);
+  static const Color silverRank = Color(0xFFC0C0C0);
+  static const Color bronzeRank = Color(0xFFCD7F32);
 }
