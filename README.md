@@ -36,11 +36,13 @@ Bu uygulama, Flutter kullanılarak geliştirilmiştir. Uygulama, MVVM mimarisine
 ## Uygulama Akışı
 - Splash Screen
 - Landing Screen
-- Onboarding Screen
+- Onboarding Screen (2 adet)
 - Auth (Login, Register) Screen
-- Paywall Screen -> Home Screen (Yeni üye olunduysa)
-- Home Screen (Kayıtlı üye giriş yaptıysa)
+- Paywall Screen -> Dashboard Screen (Yeni üye olunduysa)
+- Dashboard Screen (Kayıtlı üye giriş yaptıysa)
 - AI Call, Progress ve Profile ekranlarına HomeScreen üzerinden erişilebilir.
+
+**NOT:** İşlem / Action Screen görevinde olan AI Call Screen'dır. Home Screen görevinde ise Dashboard Screen kullanılmaktadır.
 
 ## Ekran Görüntüleri
 
