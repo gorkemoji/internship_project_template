@@ -33,24 +33,6 @@ Bu uygulama, Flutter kullanılarak geliştirilmiştir. Uygulama, MVVM mimarisine
 - **view:** Tasarım dosyalarının tutulduğu klasör
 - **viewmodel:** Tasarım dosyaları ile veriler arasındaki veri akışını sağlayan ViewModel'lerin tutulduğu klasördür.
 
-  lib/
-  ├── constant/              # Renkler (ApplicationColors)
-  ├── model/                 # Onboarding Veri Modeli
-  ├── service/               # AuthService ve DatabaseService
-  ├── view/                  # Tasarım dosyaları (View)
-  │   ├── screen/            # Ekran tasarımları
-  │   │   ├── auth/          # Giriş ve Kayıt Ekranları
-  │   │   ├── call/          # AI Arama Ekranı
-  │   │   ├── home/          # Ana Ekran
-  │   │   ├── landing/       # Karşılama (Landing) Ekranı
-  │   │   ├── onboarding/    # Tanıtım (Onboarding) Ekranları
-  │   │   ├── paywall/       # Ödeme Ekranı
-  │   │   ├── profile/       # Profil Ekranı
-  │   │   ├── progress/      # İlerleme Ekranı
-  │   │   ├── splash/        # Splash Ekranı
-  │   ├── widget/            # Ekran tasarımlarında kullanılan custom widgetlar (View)
-  └── viewmodel/             # Model ile View arasındaki bağlantıyı kuran ViewModel (Köprüler)
-
 ## Uygulama Akışı
 - Splash Screen
 - Landing Screen
