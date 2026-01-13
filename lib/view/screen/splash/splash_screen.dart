@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../../auth_wrapper.dart';
-import '../../../constant/application_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,22 +9,38 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  // Opaklık kontrolü için gerekli değişken
+  double _opacity = 0.0;
 
   @override
   void initState() {
     super.initState();
-    _navigateToNextScreen();
+    _startSplash();
   }
 
-  _navigateToNextScreen() async {
-    await Future.delayed(const Duration(seconds: 3));
+  Future<void> _startSplash() async {
+    await Future.delayed(const Duration(milliseconds: 100));
+    if (mounted) {
+      setState(() {
+        _opacity = 1.0;
+      });
+    }
+
+    await Future.delayed(const Duration(seconds: 2));
 
     if (mounted) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => const AuthWrapper()
-        )
+        PageRouteBuilder(
+          transitionDuration: const Duration(milliseconds: 1000),
+          pageBuilder: (_, _, _) => const AuthWrapper(),
+          transitionsBuilder: (_, animation, _, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+        ),
       );
     }
   }
@@ -39,15 +53,16 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            /*Image.asset(
-              'assets/images/icon.jpeg',
-              width: 150,
-              height: 150,
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 1000),
+              opacity: _opacity,
+              curve: Curves.easeIn,
+              child: Image.asset(
+                'assets/images/lingo.png',
+                width: 200,
+                fit: BoxFit.contain,
+              ),
             ),
-            const SizedBox(height: 24),*/
-            const CircularProgressIndicator(
-              color: ApplicationColors.accent,
-            )
           ],
         ),
       ),

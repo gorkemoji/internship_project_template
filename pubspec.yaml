@@ -70,12 +70,14 @@ flutter:
     - assets/images/
 
 flutter_native_splash:
-  color: "#0097B2"
-  #image: assets/images/icon.jpeg
+  #color: "#0097B2"
+  color: "#FFFFFF"
+  image: assets/images/transparent.png
 
   android_12:
-    color: "#0097B2"
-    #image: assets/images/icon.jpeg
+    #color: "#0097B2"
+    color: "#FFFFFF"
+    image: assets/images/transparent.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
