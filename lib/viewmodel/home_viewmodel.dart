@@ -28,4 +28,12 @@ class HomeViewModel extends ChangeNotifier {
       userStream = _databaseService.getUserStream(user.uid);
     }
   }
+
+  bool canStartAiCall({required bool isPremium, required int dailySecondsLeft}) {
+    if (isPremium) {
+      return true;
+    } else {
+      return dailySecondsLeft > 0;
+    }
+  }
 }

@@ -10,7 +10,7 @@ class DatabaseService {
       'email': email,
       'level': 'Başlangıç',
       'points': 0,
-      'streak': 0,
+      'streak': 1,
       'isPremium': false,
       'planType': 'free',
       'dailySecondsLeft': 120,

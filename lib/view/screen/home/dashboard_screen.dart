@@ -4,6 +4,8 @@ import 'package:internship_project_template/view/widget/home/home_soon_bottom_sh
 import '../../../viewmodel/home_viewmodel.dart';
 import '../../widget/home/home_ai_card.dart';
 import '../../widget/home/home_lesson_card.dart';
+import '../call/ai_call_screen.dart';
+import '../paywall/paywall_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   final HomeViewModel viewModel;
@@ -25,9 +27,14 @@ class DashboardScreen extends StatelessWidget {
       stream: viewModel.userStream,
       builder: (context, snapshot) {
         String userName = "Kullanıcı";
+        bool isPremium = false;
+        int dailySecondsLeft = 120;
+
         if (snapshot.hasData && snapshot.data!.exists) {
           final data = snapshot.data!.data() as Map<String, dynamic>;
           userName = data['username'] ?? "Kullanıcı";
+          isPremium = data['isPremium'] ?? false;
+          dailySecondsLeft = data['dailySecondsLeft'] ?? 120;
         }
 
         return ListView(
@@ -46,7 +53,21 @@ class DashboardScreen extends StatelessWidget {
             const SizedBox(height: 30),
 
             HomeAiCard(
-              onTap: () => _showComingSoon(context),
+              onTap: () {
+                final canEnter = viewModel.canStartAiCall(
+                    isPremium: isPremium,
+                    dailySecondsLeft: dailySecondsLeft
+                );
+
+                if (canEnter) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AiCallScreen()),
+                  );
+                } else {
+                  _showPremiumAlert(context);
+                }
+              }
             ),
 
             const SizedBox(height: 30),
@@ -92,6 +113,21 @@ class DashboardScreen extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+
+  void _showPremiumAlert(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("Günlük süreniz doldu! Sınırsız konuşma için Premium plana geçin."),
+        backgroundColor: Colors.orange,
+        duration: Duration(seconds: 2),
+      ),
+    );
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const PaywallScreen()),
     );
   }
 }
